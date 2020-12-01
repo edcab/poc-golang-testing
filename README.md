@@ -1,5 +1,14 @@
 # poc-golang-testing
-Prueba de concepto Golang pruebas unitarias con paquete Test
+Proof of concept Golang testing unit with ```testing package of Golang```
+
+####Run
+In terminal from root of repository
+
+- To run all tests
+```$ go test``` 
+
+- To run specific test naming AddMultiple
+```$ go run test Add``` 
 
 Exercise One
 
