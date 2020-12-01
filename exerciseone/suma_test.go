@@ -11,6 +11,7 @@ func Test_Add(t *testing.T) {
 		t.Logf("ERROR: Se esperaba %d, se obtuvo %d", want, got)
 		t.Fail()
 	}
+	t.Logf("Test finished successfully")
 }
 
 func Test_AddMultiple(t *testing.T) {
@@ -22,4 +23,5 @@ func Test_AddMultiple(t *testing.T) {
 		t.Logf("ERROR: Se esperaba %d, se obtuvo %d", want, got)
 		t.Fail()
 	}
+	t.Logf("Test finished successfully")
 }

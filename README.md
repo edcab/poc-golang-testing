@@ -1,14 +1,17 @@
 # poc-golang-testing
-Proof of concept Golang testing unit with ```testing package of Golang```
 
-####Run
+Proof of concept Golang testing unit with `testing package of Golang`
+
+###Run
 In terminal from root of repository
 
 - To run all tests
-```$ go test``` 
+  `$ go test`
 
 - To run specific test naming AddMultiple
-```$ go run test Add``` 
+  `$ go run test Add`
+
+- To run unit test showing logs `$ go test -v`
 
 Exercise One
 
@@ -25,7 +28,8 @@ func Add (x, y int ) int{
 ```
 
 To test that you can import testing package:
-````
+
+```
 package exerciseone
 
 import "testing"
@@ -41,3 +45,4 @@ func Test_Add(t *testing.T){
 	}
 }
 ``
+```
