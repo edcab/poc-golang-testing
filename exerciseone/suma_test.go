@@ -3,15 +3,14 @@ package exerciseone
 import "testing"
 
 func Test_Add(t *testing.T) {
-	want := 5
+	want := 4
 	got := Add(2, 3)
 
 	//The result have to be five
 	if got != want {
-		t.Logf("ERROR: Se esperaba %d, se obtuvo %d", want, got)
-		t.Fail()
+		t.Errorf("ERROR: Se esperaba %d, se obtuvo %d", want, got)
 	}
-	t.Logf("Test finished successfully")
+	t.Logf("Test finished")
 }
 
 func Test_AddMultiple(t *testing.T) {
@@ -20,8 +19,7 @@ func Test_AddMultiple(t *testing.T) {
 
 	//The result have to be five
 	if got != want {
-		t.Logf("ERROR: Se esperaba %d, se obtuvo %d", want, got)
-		t.Fail()
+		t.Errorf("ERROR: Se esperaba %d, se obtuvo %d", want, got)
 	}
-	t.Logf("Test finished successfully")
+	t.Logf("Test finished")
 }

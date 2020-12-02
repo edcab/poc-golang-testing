@@ -11,7 +11,11 @@ In terminal from root of repository
 - To run specific test naming AddMultiple
   `$ go run test Add`
 
-- To run unit test showing logs `$ go test -v`
+- To run unit test showing logs when is not used `t.Errorf`
+  `$ go test -v`
+
+- To run benchmark tests that starts with keyword bench
+ `$ go test -bench=.`
 
 Exercise One
 
@@ -45,4 +49,24 @@ func Test_Add(t *testing.T){
 	}
 }
 ``
+```
+ Exercise two - Fibonacci benchmark
+
+Method:
+```
+func TestFibonacciFor(t *testing.T) {
+	want := 55
+	got := fibonacciRecMem(10)
+	if got != want {
+		t.Errorf("Se esperaba %d, se obtuvo %d", want, got)
+	}
+}
+```
+Benchmark:
+```
+func BenchmarkFibonacciRecMem(b *testing.B) {
+	for n := 0; n < b.N; n++ {
+		fibonacciRecMem(30)
+	}
+}
 ```
