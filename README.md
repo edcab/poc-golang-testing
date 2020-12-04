@@ -70,3 +70,41 @@ func BenchmarkFibonacciRecMem(b *testing.B) {
 	}
 }
 ```
+ Exercise Three - Using TableDriven test
+ 
+ Method under test
+ ```
+ func multiply(a, b int) int {
+ 	return a * b
+ }
+ 
+ func Multiply(a, b int) int {
+ 	return multiply(a, b)
+ }
+```
+Using TableDriven
+```
+func TestMultiply(t *testing.T) {
+	//set of data fot testing purpose
+	table := []struct {
+		name string
+		a    int
+		b    int
+		want int
+	}{
+		{"2x1", 2, 1, 2},
+		{"2x2", 2, 2, 4},
+		{"2x3", 2, 3, 6},
+		{"2x4", 2, 4, 8},
+	}
+
+	for _, v := range table {
+		t.Run(v.name, func(t *testing.T) {
+			got := multiply(v.a, v.b)
+			if got != v.want {
+				t.Fatalf("Got %d, waiting %d", got, v.want)
+			}
+		})
+	}
+}
+``
